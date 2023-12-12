@@ -41,7 +41,7 @@ rm -rf /etc/ssh/ssh_host_*
 rm -rf /var/cache/apk/*
 
 install -d -m 700 /home/vagrant/.ssh
-wget -qO /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub
+wget -qO /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/hashicorp/vagrant/main/keys/vagrant.pub
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
 
