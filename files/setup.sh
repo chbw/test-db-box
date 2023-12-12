@@ -45,6 +45,8 @@ wget -qO /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/ha
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
 
+# To skip zeroing unused disk space: poweroff here
+#poweroff
 
 # zero the free disk space -- for better compression of the box file.
 # NB prefer discard/trim (safer; faster) over creating a big zero filled file
@@ -56,3 +58,4 @@ else
     dd if=/dev/zero of=/EMPTY bs=1M || true && sync && rm -f /EMPTY && sync
 fi
 
+poweroff
