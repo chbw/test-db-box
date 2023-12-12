@@ -16,8 +16,12 @@ and point your browser to http://localhost:8080/phpmyadmin or connect to the dat
 
 In case you want to create the box from scratch yourself, run the following commands:
 ```
+rm test_db.box
+vagrant destroy -f
 vagrant up
-vagrant package --vagrantfile Vagrantfile-in-box
+vagrant package --vagrantfile Vagrantfile-in-box --output test_db.box
+vagrant box remove dev-test_db
+vagrant box add --name dev-test_db ./test_db.box
 ```
 
 
